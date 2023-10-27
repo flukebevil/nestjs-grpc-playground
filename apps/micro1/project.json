@@ -1,8 +1,15 @@
 {
-  "name": "grpc-playground",
+  "name": "micro1",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/grpc-playground/src",
+  "sourceRoot": "apps/micro1/src",
   "projectType": "application",
+  "assets": [
+    {
+      "input": "../../common/asset",
+      "glob": "**/*",
+      "output": "/assets/"
+    }
+  ],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
@@ -11,11 +18,11 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/grpc-playground",
-        "main": "apps/grpc-playground/src/main.ts",
-        "tsConfig": "apps/grpc-playground/tsconfig.app.json",
+        "outputPath": "dist/apps/micro1",
+        "main": "apps/micro1/src/main.ts",
+        "tsConfig": "apps/micro1/tsconfig.app.json",
         "assets": [
-          "apps/grpc-playground/src/assets",
+          "apps/micro1/src/assets",
           {
             "input": "common/assets/proto",
             "glob": "**/*",
@@ -23,7 +30,7 @@
           }
         ],
         "isolatedConfig": true,
-        "webpackConfig": "apps/grpc-playground/webpack.config.js"
+        "webpackConfig": "apps/micro1/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -34,14 +41,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "grpc-playground:build"
+        "buildTarget": "micro1:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "grpc-playground:build:development"
+          "buildTarget": "micro1:build:development"
         },
         "production": {
-          "buildTarget": "grpc-playground:build:production"
+          "buildTarget": "micro1:build:production"
         }
       }
     },
@@ -49,14 +56,14 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/grpc-playground/**/*.ts"]
+        "lintFilePatterns": ["apps/micro1/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/grpc-playground/jest.config.ts",
+        "jestConfig": "apps/micro1/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

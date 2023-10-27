@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc save (UserPayload) returns (UserCreateResponse) {}
+}
+
+message UserPayload {
+  string name = 1;
+  string surname = 2;
+}
+
+message UserCreateResponse {
+  string id = 1;
+  string name = 2;
+}

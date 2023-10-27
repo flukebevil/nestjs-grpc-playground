@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@grpc-playground/common": ["common/src/index.ts"]
+    },
   },
+  "staticDirs": ["common/assets"],
   "exclude": ["node_modules", "tmp"]
 }
