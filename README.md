@@ -1,5 +1,5 @@
 # GrpcPlayground
-**This is my playground Grpc service, just want to know to it works.**
+**This is my Grpc service playground, just want to know to it works.**
 
 ## Start the app
 - install package `npm install`
